@@ -1,7 +1,7 @@
 import requests
 
-BOT_TOKEN = "8831943364:AAHKaZEYWo0RKi3YJtNW_rfW9uo0vC1Em8E"
-CHAT_ID = "7844730036"
+BOT_TOKEN = "ISI_BOT_TOKEN_KAMU"
+CHAT_ID = "ISI_CHAT_ID_KAMU"
 
 websites = [
     {
@@ -19,23 +19,15 @@ for site in websites:
         response = requests.get(site["url"], timeout=10)
 
         if response.status_code == 200:
-
-    requests.get(
-        f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-        params={
-            "chat_id": CHAT_ID,
-            "text": f"✅ TEST\n\nWebsite {site['nama']} ONLINE"
-        }
-    )
-
-print(f'{site["nama"]} ONLINE')
+            print(f'{site["nama"]} ONLINE')
         else:
-            pesan = f"""🔴 Domain DOWN
+            print(f'{site["nama"]} DOWN')
 
-Website: {site["nama"]}
-Domain: {site["url"]}
-Status: {response.status_code}
-"""
+            pesan = (
+                f"🔴 Domain DOWN\n\n"
+                f"Website: {site['nama']}\n"
+                f"Domain: {site['url']}"
+            )
 
             requests.get(
                 f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
@@ -45,17 +37,14 @@ Status: {response.status_code}
                 }
             )
 
-            print(f'{site["nama"]} DOWN')
+    except Exception:
+        print(f'{site["nama"]} DOWN')
 
-    except Exception as e:
-        pesan = f"""🔴 Domain DOWN
-
-Website: {site["nama"]}
-Domain: {site["url"]}
-
-Error:
-{e}
-"""
+        pesan = (
+            f"🔴 Domain DOWN\n\n"
+            f"Website: {site['nama']}\n"
+            f"Domain: {site['url']}"
+        )
 
         requests.get(
             f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
@@ -64,5 +53,3 @@ Error:
                 "text": pesan
             }
         )
-
-        print(f'{site["nama"]} ERROR')
