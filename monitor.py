@@ -47,25 +47,24 @@ Status  : {response.status_code}
 
             print(r.text)
 
-    except Exception as e:
+    else:
 
-        print(e)
+    print(f"{nama} DOWN")
+    status_baru[nama] = "DOWN"
 
-        pesan = f"""🔴 DOMAIN DOWN
+    pesan = (
+        "🔴 DOMAIN DOWN\n\n"
+        f"🌐 Website : {nama}\n"
+        f"🔗 Domain : {url}\n\n"
+        f"❌ HTTP Status : {response.status_code}"
+    )
 
-Website : {site["nama"]}
-Domain  : {site["url"]}
-
-Error:
-{e}
-"""
-
-        r = requests.get(
-            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-            params={
-                "chat_id": CHAT_ID,
-                "text": pesan
-            }
-        )
+    requests.get(
+        f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+        params={
+            "chat_id": CHAT_ID,
+            "text": pesan
+        }
+    )
 
         print(r.text)
