@@ -1,5 +1,5 @@
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 
 BOT_TOKEN = "8831943364:AAHKaZEYWo0RKi3YJtNW_rfW9uo0vC1Em8E"
 CHAT_ID = "7844730036"
@@ -17,7 +17,7 @@ WEBSITES = [
 
 for site in WEBSITES:
 
-    waktu = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+    waktu = (datetime.utcnow() + timedelta(hours=7)).strftime("%d-%m-%Y %H:%M:%S WIB")
 
     try:
         response = requests.get(
