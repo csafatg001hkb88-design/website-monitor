@@ -19,7 +19,16 @@ for site in websites:
         response = requests.get(site["url"], timeout=10)
 
         if response.status_code == 200:
-            print(f'{site["nama"]} ONLINE')
+
+    requests.get(
+        f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+        params={
+            "chat_id": CHAT_ID,
+            "text": f"✅ TEST\n\nWebsite {site['nama']} ONLINE"
+        }
+    )
+
+print(f'{site["nama"]} ONLINE')
         else:
             pesan = f"""🔴 Domain DOWN
 
