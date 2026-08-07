@@ -1,7 +1,7 @@
 import requests
 
-BOT_TOKEN = "ISI_BOT_TOKEN_KAMU"
-CHAT_ID = "ISI_CHAT_ID_KAMU"
+$botToken = "8831943364:AAHKaZEYWo0RKi3YJtNW_rfW9uo0vC1Em8E";
+$chatId = "7844730036";
 
 websites = [
     {
