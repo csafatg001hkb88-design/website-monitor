@@ -71,7 +71,7 @@ Domain  : {site["url"]}
 Website : {site["nama"]}
 Domain  : {site["url"]}
 
-Status  : {response.status_code}
+Status : {response.status_code}
 """
 
             r = requests.get(
