@@ -1,7 +1,7 @@
 import requests
 
-$botToken = "8831943364:AAHKaZEYWo0RKi3YJtNW_rfW9uo0vC1Em8E";
-$chatId = "7844730036";
+BOT_TOKEN = "8831943364:AAHKaZEYWo0RKi3YJtNW_rfW9uo0vC1Em8E";
+CHAT_ID = "7844730036";
 
 websites = [
     {
