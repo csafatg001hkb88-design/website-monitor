@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 
 BOT_TOKEN = "8831943364:AAHKaZEYWo0RKi3YJtNW_rfW9uo0vC1Em8E"
 CHAT_ID = "7844730036"
@@ -15,6 +16,9 @@ WEBSITES = [
 ]
 
 for site in WEBSITES:
+
+    waktu = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+
     try:
         response = requests.get(
             site["url"],
@@ -35,6 +39,8 @@ Website : {site["nama"]}
 Domain  : {site["url"]}
 
 Status  : ONLINE
+
+🕒 Waktu : {waktu}
 """
 
         else:
@@ -47,6 +53,8 @@ Website : {site["nama"]}
 Domain  : {site["url"]}
 
 HTTP Status : {response.status_code}
+
+🕒 Waktu : {waktu}
 """
 
         r = requests.get(
@@ -72,6 +80,8 @@ Domain  : {site["url"]}
 
 Error :
 {str(e)}
+
+🕒 Waktu : {waktu}
 """
 
         r = requests.get(
