@@ -19,16 +19,14 @@ for site in websites:
         response = requests.get(site["url"], timeout=10)
 
         if response.status_code == 200:
-            print(f"{site['nama']} ONLINE")
+            print(f'{site["nama"]} ONLINE')
         else:
             pesan = f"""🔴 Domain DOWN
 
-Website: {site['nama']}
-Domain: {site['url']}
-
-HTTP Status: {response.status_code}
-
-⚠️ Segera periksa server."""
+Website: {site["nama"]}
+Domain: {site["url"]}
+Status: {response.status_code}
+"""
 
             requests.get(
                 f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
@@ -38,18 +36,17 @@ HTTP Status: {response.status_code}
                 }
             )
 
-            print(f"{site['nama']} DOWN")
+            print(f'{site["nama"]} DOWN')
 
     except Exception as e:
         pesan = f"""🔴 Domain DOWN
 
-Website: {site['nama']}
-Domain: {site['url']}
+Website: {site["nama"]}
+Domain: {site["url"]}
 
-Alasan:
+Error:
 {e}
-
-⚠️ Segera periksa server."""
+"""
 
         requests.get(
             f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
@@ -59,4 +56,4 @@ Alasan:
             }
         )
 
-        print(f"{site['nama']} ERROR")
+        print(f'{site["nama"]} ERROR')
