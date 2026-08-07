@@ -6,7 +6,7 @@ CHAT_ID = "ISI_CHAT_ID_KAMU"
 websites = [
     {
         "nama": "afatogel",
-        "url": "https://afatogel.com"
+        "url": "https://domain-test-123456789.com"
     },
     {
         "nama": "afatogelvvip",
