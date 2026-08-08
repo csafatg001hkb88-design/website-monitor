@@ -7,7 +7,7 @@ CHAT_ID = "7844730036"
 WEBSITES = [
     {
         "nama": "afatogel",
-        "url": "https://domain-test-123456789.com"
+        "url": "https://afatogel.com"
     },
     {
         "nama": "afatogelvvip",
