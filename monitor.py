@@ -11,7 +11,7 @@ WEBSITES = [
     },
     {
         "nama": "afatogelvvip",
-        "url": "https://afatogelvvip.com"
+        "url": "https://afaregist.com"
     }
 ]
 
