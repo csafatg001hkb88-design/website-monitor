@@ -11,7 +11,7 @@ WEBSITES = [
     },
     {
         "nama": "afatogelvvip",
-        "url": "https://afastart.com"
+        "url": "https://afamoving.com"
     }
 ]
 
